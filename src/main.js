@@ -1,29 +1,28 @@
-import './style.css'
-import javascriptLogo from './javascript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.js'
+import './style.css';
+import javascriptLogo from './javascript.svg';
+import viteLogo from '/vite.svg';
+import { setupCounter } from './counter.js';
 import { gsap } from "gsap";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+import ScrollTrigger from 'gsap/ScrollTrigger';
 
-// document.querySelector('#app').innerHTML = `
-//   <div>
-//     <a href="https://vite.dev" target="_blank">
-//       <img src="${viteLogo}" class="logo" alt="Vite logo" />
-//     </a>
-//     <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-//       <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-//     </a>
-//     <h1>Hello Vite!</h1>
-//     <div class="card">
-//       <button id="counter" type="button"></button>
-//     </div>
-//     <p class="read-the-docs">
-//       Click on the Vite logo to learn more
-//     </p>
-//   </div>
-// `
+// Register plugins
+gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
 
-//setupCounter(document.querySelector('#counter'))
+// Animate centered buttons on page load
+gsap.from("section:first-of-type button", {
+    y: 0,
+    opacity: 100,
+    duration: 1,
+    ease: "back.out(1.7)",
+    stagger: 0.15,
+    delay: 0.5
+});
 
+
+// ======================
+// Text Animations
+// ======================
 gsap.from("#hello", {
     duration: 1.5,
     repeat: -1,
@@ -52,4 +51,47 @@ gsap.to("#loop", {
     repeat: -1,
     ease: "none",
     duration: 10
+});
+
+// ======================
+// Button Scroll Navigation
+// ======================
+document.getElementById("helloSectionBtn").addEventListener("click", () => {
+    gsap.to(window, {
+        duration: 1,
+        scrollTo: {
+            y: "#helloSection",
+            offsetY: 50,
+        },
+        ease: "power2.out",
+        onComplete: () => ScrollTrigger.refresh()
+    });
+});
+
+document.getElementById("scrollTriggerSectionBtn").addEventListener("click", () => {
+    gsap.to(window, {
+        duration: 1,
+        scrollTo: {
+            y: "#scrollTriggerSection",
+            offsetY: 50,
+        },
+        ease: "power2.out",
+        onComplete: () => ScrollTrigger.refresh()
+    });
+});
+
+// ======================
+// ScrollTrigger Animation: Rotate .box while scrolling
+// ======================
+gsap.to('.box', {
+    rotation: 360,
+    scrollTrigger: {
+        trigger: '.box',
+        start: 'top 80%',
+        end: 'bottom center',
+        scrub: true,
+        //markers: true
+    },
+    opacity: 1, // Also fade in as it rotates
+    ease: 'none'
 });

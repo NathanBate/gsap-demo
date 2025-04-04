@@ -24,14 +24,92 @@ a:hover {
 
 body {
   margin: 0;
+  font-family: sans-serif;
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+section button {
+  background: transparent;
+  color: gray;
+  padding: 0.75em 1.5em;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 30px;
+  cursor: pointer;
+  margin: 10px;
+  transition: all 0.3s ease;
+}
+
+section button:hover {
+  background-color: #646cff;
+  color: black;
+}
+
+.menu-bar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #1a1a1a;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.menu-bar button {
+  background: transparent;
+  border: 2px solid #646cff;
+  color: #fff;
+  padding: 0.75em 1.5em;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.menu-bar button:hover {
+  background-color: #646cff;
+  color: #1a1a1a;
+}
+
+.helloScroll {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box {
+  width: 200px;
+  height: 200px;
+  background: coral;
+  transform: translateY(50px);
+  opacity: 0;
+}
+
+.spacer {
+  height: 100vh;
 }
 
 h1 {
-  font-size: 3.2em;
+  font-size: 1em;
   line-height: 1.1;
 }
 

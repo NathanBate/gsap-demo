@@ -5,43 +5,45 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
-
-    <style>
-      body {
-        font-family: sans-serif;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        margin: 0;
-      }
-
-      h1 {
-        font-size: 3rem;
-        color: #2c3e50;
-      }
-    </style>
-
   </head>
   <body>
-    <div id="app">
-      <h1 id="hello">Hello World</h1>
-      <h1 id="separate">
-        <span>H</span><span>e</span><span>l</span><span>l</span><span>o</span>
-        <span> </span>
-        <span>W</span><span>o</span><span>r</span><span>l</span><span>d</span>
-      </h1>
-      <h1 id="separate-timeline">
-        <span>H</span><span>e</span><span>l</span><span>l</span><span>o</span>
-        <span> </span>
-        <span>W</span><span>o</span><span>r</span><span>l</span><span>d</span>
-      </h1>
-      <h1 id="loop" style="margin-top:100px;">
-        <span>H</span><span>e</span><span>l</span><span>l</span><span>o</span>
-        <span> </span>
-        <span>W</span><span>o</span><span>r</span><span>l</span><span>d</span>
-      </h1>
-    </div>
+
+  <section>
+    <button id="helloSectionBtn">Text Effects</button>
+    <button id="scrollTriggerSectionBtn">Scroll Trigger</button>
+  </section>
+
+      <section id="scrollTriggerSection">
+        <div class="spacer">Scroll down</div>
+
+        <div class="helloScroll">
+          <div class="box">Hello Scroll!</div>
+        </div>
+
+        <div class="spacer"></div>
+      </section>
+
+      <section id="helloSection">
+        <h1 id="hello">Hello World</h1>
+        <h1 id="separate">
+          <span>H</span><span>e</span><span>l</span><span>l</span><span>o</span>
+          <span> </span>
+          <span>W</span><span>o</span><span>r</span><span>l</span><span>d</span>
+        </h1>
+        <h1 id="separate-timeline">
+          <span>H</span><span>e</span><span>l</span><span>l</span><span>o</span>
+          <span> </span>
+          <span>W</span><span>o</span><span>r</span><span>l</span><span>d</span>
+        </h1>
+        <h1 id="loop" style="margin-top:50px;">
+          <span>H</span><span>e</span><span>l</span><span>l</span><span>o</span>
+          <span> </span>
+          <span>W</span><span>o</span><span>r</span><span>l</span><span>d</span>
+        </h1>
+      </section>
+
+
+
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
